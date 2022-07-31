@@ -1,0 +1,62 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    {{>admin_header}}
+          <h3>Users</h3>
+
+          <div class="container">
+            <div class="row" >
+                <div class="col-sm-4" style="border:1px solid black">
+                    <h4><b>Total Bills</b></h4> 
+                    <h5><b>{{totalFiles}}</b></h5> 
+                </div>    
+                <div class="col-sm-4" style="border:1px solid black">
+                    <h4><b>Total Amount Saved</b></h4> 
+                    <h5><b>0 ₹</b></h5>
+                </div>
+                <div class="col-sm-4" style="border:1px solid black">
+                    <h4><b>Total Users</b></h4> 
+                    <h5><b>{{totalUsers}}</b></h5>
+                </div>
+            </div>
+
+          </div>
+          <br><br>
+
+          <table class="table " id="mytable">
+                <thead>
+                  <tr>
+                    <th>Sr.Number</th>
+                    <th>Email </th>
+                    <th>File Names</th>
+                    <th>Company</th>
+                    <th>Saved Amount</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each records}}
+                  <tr>
+                    <td>{{ @index}}</td>
+                    <td>{{this.fileuseremail}}</td>
+                    <td>{{this.filename}}</td>
+                    <td>{{this.serviceprovider}}</td> 
+                    <td>{{this.filesavedamount}} ₹</td>
+                    <td>{{this.filestatus}}</td>
+                  </tr>
+                  {{/each}}
+                </tbody>
+              </table>
+    
+    </body>
+    </html>

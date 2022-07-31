@@ -1,0 +1,180 @@
+
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="57x57" href="./img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="./img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="./img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="./img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="./img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="./img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="./img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="./img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./img/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="./img/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="./img/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+<link rel="manifest" href="./img/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="../img/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
+    <link rel="stylesheet" href="../css/styles.css" />
+    <title>Plumber</title>
+  </head>
+  <body>
+<section class="container ">
+  <aside>
+    <div class="sidebar-top">
+      <div class="logo">
+        <img src="../img/logo.png" alt="logo" />
+      </div>
+      <div class="close" id="close">
+        <span class="material-icons-sharp">
+          close
+          </span>
+      </div>
+    </div>
+    <div id="sidebar" class="sidebar">
+      <a href="/users/goToHome" class="active">
+        <span class="material-icons-sharp">
+          grid_view
+          </span>
+          <h3>Home Page</h3>
+      </a>
+      <a href="/users/getComplaints">
+        <span class="material-icons-sharp">
+          receipt_long
+          </span>
+          <h3>Complaints</h3>
+      </a>
+      <div class="sidebarBottom">
+        <a href="#">
+          <span class="material-icons-sharp">
+            help_outline
+            </span>
+            <h3>Help</h3>
+        </a>
+        <a href="#">
+          <span class="material-icons-sharp">
+            contact_support
+            </span>
+            <h3>Get Help</h3>
+        </a>
+        <a href="#">
+          <span class="material-icons-sharp">
+            list_alt
+            </span>
+            <h3>Read Teams</h3>
+        </a>
+        <a href="/logout">
+          <span class="material-icons-sharp">
+            logout
+            </span>
+            <h3>Sign Out</h3>
+        </a>
+      </div>
+    </div>
+  </aside>
+  <main class="mainContent">
+
+    <div class="content">
+        
+
+      
+
+        <div class="datatable">
+          <table>
+            <thead>
+            <tr>
+                    <th>Sr.Number</th>
+                    <th>Product</th>
+                    <th>In Warranty</th>
+                    <th>Issue Desc</th>
+                    <th>Time Slot</th>
+                    <th>Address</th>
+                  </tr>
+            </thead>
+           <tbody>
+                  {{#each records}}
+                  <tr>
+                    <td>{{@index}}</td>
+                    <td><a href="#">{{ this.product }}</a></td>
+                    <td>{{this.warranty}}</td>
+                    <td>{{this.issue}}</td>
+                    <td>{{this.timeslot}}</td>
+                    <td>{{this.address}}</td>
+                  </tr>
+                  {{/each}}
+                </tbody>
+
+                {{!-- pending,processing,accepted,rejected,completed. --}}
+
+          </table>
+        </div>
+    </div>
+  </main>
+
+  <div class="mobileHeader">
+    <div class="logo">
+      <img src="./img/logo.png" alt="logo" />
+    </div>
+    <div class="menutogler" id="menubtn">
+      <span class="material-icons-sharp">
+        menu
+        </span>
+    </div>
+  </div>
+</section>
+
+<script>
+            $(document).ready(function() {
+                $("#user_search").on("keyup", function() {
+                  console.log("Value Changed")
+                    var value = $(this).val().toLowerCase();
+                    $("#users tr").filter(function() {
+                        $(this).toggle($(this).text()
+                        .toLowerCase().indexOf(value) > -1)
+                    });
+                });
+
+                function getComboA(id){
+                    console.log(id);
+                }
+
+
+                $("select").on("change", function () {
+                  var id = $(this).attr("id");
+                  var fileStatus = this.value;
+                  $.ajax({
+                    url: "http://localhost:8080/users/updateFileStatus",
+                    type: "POST",
+                    data: {
+                      id: id,
+                      fileStatus: fileStatus,
+                    },
+                    dataType: "json",
+                    success: function (result) {
+                      console.log(result)
+                    },
+                  });
+        });
+
+            });
+        </script>
+
+<script src="/js/main.js"></script>
+    </body>
+   </html>
+

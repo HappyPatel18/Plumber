@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="57x57" href="./img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="./img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="./img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="./img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="./img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="./img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="./img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="./img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./img/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="./img/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="./img/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+<link rel="manifest" href="./img/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="./img/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Login to your Billshaper account</title>
+    <style>
+      .error {
+	color: #D8000C;
+	background-color: #FFBABA;
+}
+    </style>
+  </head>
+  <body class="registerPage">
+    <header id="home" class="header">
+      <nav class="navigation">
+        <div class="nav-center container">
+          <a href="index.html" class="logo">
+            <img src="../img/logo.png" alt="EV Birds" />
+          </a>
+
+          <div class="nav-menu">
+            <div class="nav-top">
+              <div class="logo">
+                <img src="img/logo.png" alt="learn" />
+              </div>
+            </div>
+          </div>
+          <div class="nav-icons">
+            <span>
+              <a href="/register">Sign Up</a>
+            </span>
+          </div>
+          
+        </div>
+      </nav>
+    </header>
+    <section class="registerBox loginbox">
+      <div class="container">
+        <div class="box">
+              {{#if message}}
+                  <div class="error">
+                      {{message}}
+                  </div>
+              {{/if}}
+            <div>
+            <h5 class="text-primary">Welcome Back</h5>
+              <h2 class="title">Admin Log in to Billshaper</h2>
+              <form onsubmit="return validateLoginForm()" name="loginForm" method="post" action="/admin/login" class="form contact-form" >
+
+                  <label for="email">Email</label>
+                  <input type="email" placeholder="Type Your Email" name="email" id="login-email" required>
+                  <label for="password">Password</label>
+                  <input type="password" placeholder="Type Your Password" name="password" id="login-password" required>
+                  <button type="submit" class="btn btn-primary" id="submitbtn">Log In</button>
+                  <p class="center">Or</p>
+
+                  <a href="/auth/google" type="submit" style="text-align:center;"  class="btn btn-primary fb" id="submitbtn">Log In with Google</a>
+                  {{!-- <div class="otherLinks">
+                        <p>Dont have an account? <a href="/register">Sign up</a>.</p>
+                        <p>Trouble signing in? <a href="/reset-password">Reset your password</a>.</p>
+                    </div> --}}
+                  </div>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="pop">
+      <div class="container">
+        <div class="col-fore">
+          <div class="info logo">
+            <img src="../img/logo.png" alt="">
+            <p>We want to help save you money. Behind the shiny website, we're real people who think the way big corporations treat customers is unfair.</p>
+            <p>If you ever need anything, email</p>
+            <a href="mailto:hello@billshaper.com">hello@billshaper.com</a>
+          </div>
+          <div class="links"> <h3>About</h3>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul></div>
+          <div class="links"> <h3>About</h3>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul></div>
+          <div class="links"> <h3>About</h3>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul></div>
+        </div>
+      </div>
+              <div class="col-two footerbottom container">
+          <div>
+           <h5><span id="year"></span> © Billshaper, LLC </h5>
+          </div>
+          <div><ul class="follow aos-init aos-animate" data-aos="fade-in" data-aos-offset="0" data-aos-delay="800">
+                  <li>
+                    <a href="#">
+                      <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24.2188 12.1094C24.2188 5.41992 18.7988 0 12.1094 0C5.41992 0 0 5.41992 0 12.1094C0 18.1533 4.42822 23.1631 10.2173 24.0723V15.6099H7.14111V12.1094H10.2173V9.44141C10.2173 6.40674 12.0239 4.73047 14.791 4.73047C16.1162 4.73047 17.502 4.9668 17.502 4.9668V7.94531H15.9746C14.4707 7.94531 14.0015 8.87891 14.0015 9.83643V12.1094H17.3599L16.8228 15.6099H14.0015V24.0723C19.7905 23.1631 24.2188 18.1533 24.2188 12.1094Z" fill="#DDDDDD"></path>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.11 0C5.42175 0 0 5.42175 0 12.11C0 18.7983 5.42175 24.22 12.11 24.22C18.7983 24.22 24.22 18.7983 24.22 12.11C24.22 5.42175 18.7983 0 12.11 0ZM9.14557 17.1293H6.6933V9.23766H9.14557V17.1293ZM7.9043 8.26886C7.12976 8.26886 6.62896 7.72012 6.62896 7.04146C6.62896 6.34892 7.1449 5.81658 7.93583 5.81658C8.72677 5.81658 9.21117 6.34892 9.22631 7.04146C9.22631 7.72012 8.72677 8.26886 7.9043 8.26886ZM18.1019 17.1293H15.6497V12.7559C15.6497 11.7379 15.2939 11.0466 14.4071 11.0466C13.7297 11.0466 13.3273 11.5146 13.1494 11.9649C13.0838 12.1251 13.0674 12.3522 13.0674 12.578V17.1281H10.6139V11.7543C10.6139 10.7691 10.5824 9.94534 10.5496 9.2364H12.6802L12.7924 10.3326H12.8416C13.1646 9.81793 13.9555 9.05853 15.2788 9.05853C16.8922 9.05853 18.1019 10.1396 18.1019 12.4632V17.1293V17.1293Z" fill="#DDDDDD"></path>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.1321 11.8993L11.2989 10.5773C11.0516 10.4625 10.8485 10.5912 10.8485 10.8649V13.3551C10.8485 13.6288 11.0516 13.7575 11.2989 13.6427L14.1309 12.3207C14.3794 12.2046 14.3794 12.0154 14.1321 11.8993ZM12.11 0C5.42175 0 0 5.42175 0 12.11C0 18.7983 5.42175 24.22 12.11 24.22C18.7983 24.22 24.22 18.7983 24.22 12.11C24.22 5.42175 18.7983 0 12.11 0ZM12.11 17.0297C5.91119 17.0297 5.80271 16.4709 5.80271 12.11C5.80271 7.74914 5.91119 7.19031 12.11 7.19031C18.3088 7.19031 18.4173 7.74914 18.4173 12.11C18.4173 16.4709 18.3088 17.0297 12.11 17.0297Z" fill="#DDDDDD"></path>
+                      </svg>
+                    </a>
+                  </li>
+                </ul></div>
+          </div>
+    </footer>
+<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+<script>
+  ScrollReveal().reveal('.leftimg',{
+    delay: 700,
+    origin: 'bottom',
+    duration: 900,
+    
+  });
+  ScrollReveal().reveal('.title', {
+    delay: 500,
+    duration: 300,
+    easing: 'ease-in-out',
+    origin: 'bottom',
+    distance: '50px',
+    
+});
+ScrollReveal().reveal('.subtitle', {
+    delay: 700,
+    duration: 500,
+    easing: 'ease-in',
+    origin: 'bottom',
+        
+});
+ScrollReveal().reveal('.btn', {
+    delay: 900,
+    duration: 500,
+    easing: 'ease-in',
+});
+ScrollReveal().reveal('otherLinks', {
+    delay: 700,
+    duration: 500,
+    easing: 'ease-in',
+    origin: 'bottom',
+        
+});
+ScrollReveal().reveal('.header', {
+    delay: 0,
+    duration: 300,
+    reset: true,
+    easing: 'ease-in' ,
+    origin: 'top',
+    distance: '100px',
+    
+});
+ScrollReveal().reveal('.box', {
+    delay: 0,
+    duration: 500,
+    reset: true,
+    easing: 'ease-in' ,
+    origin: 'top',
+    distance: '1px',
+    
+});
+ScrollReveal().reveal('input', {
+    delay: 600,
+    easing: 'ease-in' ,  
+    origin: 'top',  
+});
+ScrollReveal().reveal('small', {
+    delay: 600,
+    duration: 500,
+    easing: 'ease-in' ,    
+});
+ScrollReveal().reveal('.footer', {
+    delay: 800,
+    duration: 500,
+    reset: true,
+    easing: 'ease-in' ,
+    origin: 'bottom',
+    distance: '100px',
+    
+});
+
+</script>
+<script>
+        function validateLoginForm() 
+          { 
+        let password = document.forms["loginForm"]["password"].value;
+        let email = document.forms["loginForm"]["email"].value;
+
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+          if(email.match(mailformat))
+            {           
+                 return true;
+            }
+            else
+            {
+            alert("You have entered an invalid email address!");
+            return false;
+            }
+      
+
+            }
+      </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    {{!-- <meta name="google-signin-scope" content="patelvirat884@gmail.com"> --}}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    {{! <link rel="icon" href="/img/weather.png"/>  This is used to set icon }}
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+
+    <main>
+      <form onsubmit="return validateLoginForm()" name="loginForm" method="post" action="/users/login" class="form contact-form" >
+        <h4 style="text-align:center;font-size:30px">User Login</a></h4>
+        <h5><a href="/admin/login">Admin / </a><a href="/login">User</a></h5>
+
+        <h5><a href="/login">Login / </a><a href="/register">Register</a></h5>
+
+        <div class="form-row">
+          <label for="email" class="form-label">EMAIL</label>
+          <input
+            type="email"
+            id="login-email"
+            name="email"
+            class="form-input password-input"
+          required/>
+        </div>
+
+        <div class="form-row">
+          <label for="password" class="form-label">PASSWORD</label>
+          <input
+            type="password"
+            id="login-password"
+            class="form-input password-input"
+            name="password"
+          required/>
+        </div>
+
+        <button type="submit" class="btn btn-block">submit</button>
+
+        <br>
+        <p style="margin-left:150px"> OR </p>
+                <div class="row">
+                    <div class="col-md-12">
+                    <a class="googleBtn btn-lg btn-google btn-block text-uppercase btn-outline" style="backgroundColor:white;text-align: center;" href="/auth/google"><img src="https://img.icons8.com/color/16/000000/google-logo.png"> Signup Using Google</a>
+                    </div> 
+                </div>
+
+
+      </form>
+
+    </main>
+  
+    <script>
+        function validateLoginForm() 
+          { 
+        let password = document.forms["loginForm"]["password"].value;
+        let email = document.forms["loginForm"]["email"].value;
+
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+          if(email.match(mailformat))
+            {           
+                 return true;
+            }
+            else
+            {
+            alert("You have entered an invalid email address!");
+            return false;
+            }
+      
+
+            }
+      </script>
+
+            
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./browser-app.js"></script>
+  </body>
+</html> --}}

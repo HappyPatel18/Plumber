@@ -1,0 +1,120 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Register</title>
+    {{! <link rel="icon" href="/img/weather.png"/>  This is used to set icon }}
+
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <main>
+      <form
+        class="form contact-form"
+        onsubmit="return validateForm()"
+        action=""
+        method="post"
+        name="registerForm"
+      >
+        <h4 style="text-align:center;font-size:30px">Admin Register</h4>
+
+        <h5><a href="/admin/login">Login / </a><a href="/admin/register">Register</a></h5>
+
+        <div class="form-row">
+          <label for="username" class="form-label">USERNAME</label>
+          <input
+            type="text"
+            name="username"
+            id="register-username"
+            class="form-input username-input"
+          required/>
+        </div>
+        <div class="form-row">
+          <label for="email" class="form-label">EMAIL</label>
+          <input
+            type="email"
+            name="email"
+            id="register-email"
+            class="form-input password-input"
+          required/>
+        </div>
+        <div class="form-row">
+          <label for="password" class="form-label">PASSWORD</label>
+          <input
+            type="password"
+            name="password"
+            id="register-password"
+            class="form-input password-input"
+          required/>
+        </div>
+        <div class="form-row">
+          <label for="password" class="form-label">CONFIRM PASSWORD</label>
+          <input
+            type="password"
+            name="confirmPassword"
+            id="register-confirm-password"
+            class="form-input password-input"
+          required/>
+        </div>
+        <div class="text-small form-alert">there was an error</div>
+        <button type="submit" class="btn btn-block">submit</button>
+      </form>
+
+    </main>
+    {{!-- {{>footer}} --}}
+    {{! <script src="./js/app.js"></script> }}
+    <script>
+        function validateForm() 
+      { 
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        let password = document.forms["registerForm"]["password"].value;
+        let cpassword = document.forms["registerForm"]["confirmPassword"].value;
+        let email = document.forms["registerForm"]["email"].value;
+        let username = document.forms["registerForm"]["username"].value;
+        
+        
+
+         if (password != cpassword) 
+         { 
+            var someElement= document.getElementById("register-confirm-password");
+                someElement.style.border = "2px solid #ef716d";
+
+            
+                    return false;
+         } 
+         else{
+            if(email.match(mailformat))
+            {           
+                 return true;
+            }
+            else
+            {
+            alert("You have entered an invalid email address!");
+            return false;
+            }
+
+         }
+            
+
+        return true; 
+
+
+
+      }
+
+    </script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    >
+
+      
+
+    </script>
+    <script src="./browser-app.js"></script>
+  </body>
+</html>

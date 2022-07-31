@@ -1,0 +1,41 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Users Bill</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    {{>admin_header}}
+          <h3>User Name will be Displayed</h3>
+
+
+
+
+          <table class="table " id="mytable">
+                <thead>
+                  <tr>
+                    <th>Sr.Number</th>
+                    <th>Bill Name</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each records}}
+                  <tr>
+                    <td>{{ this._id }}</td>
+                    <td><a href="/{{this.filePath}}">{{ this.fileName }}</a></td>
+                    {{!-- <td>{{ author}}</td> --}}
+
+                  </tr>
+                  {{/each}}
+                </tbody>
+              </table>
+    
+    </body>
+
+    </html>
