@@ -28,7 +28,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../css/style.css" />
-    <title>Login to your Billshaper account</title>
+    <title>Login</title>
     <style>
       .error {
 	color: #D8000C;
@@ -40,9 +40,7 @@
     <header id="home" class="header">
       <nav class="navigation">
         <div class="nav-center container">
-          <a href="index.html" class="logo">
-            <img src="../img/logo.png" alt="EV Birds" />
-          </a>
+          
 
           <div class="nav-menu">
             <div class="nav-top">
@@ -70,7 +68,7 @@
               {{/if}}
             <div>
             <h5 class="text-primary">Welcome Back</h5>
-              <h2 class="title">Admin Log in to Billshaper</h2>
+              <h2 class="title">Admin Log</h2>
               <form onsubmit="return validateLoginForm()" name="loginForm" method="post" action="/admin/login" class="form contact-form" >
 
                   <label for="email">Email</label>
@@ -96,10 +94,10 @@
       <div class="container">
         <div class="col-fore">
           <div class="info logo">
-            <img src="../img/logo.png" alt="">
+            {{!-- <img src="../img/logo.png" alt=""> --}}
             <p>We want to help save you money. Behind the shiny website, we're real people who think the way big corporations treat customers is unfair.</p>
             <p>If you ever need anything, email</p>
-            <a href="mailto:hello@billshaper.com">hello@billshaper.com</a>
+            {{!-- <a href="mailto:hello@billshaper.com">hello@billshaper.com</a> --}}
           </div>
           <div class="links"> <h3>About</h3>
             <ul>
@@ -257,96 +255,3 @@ ScrollReveal().reveal('.footer', {
 
 
 
-
-
-
-
-
-{{!-- <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    {{!-- <meta name="google-signin-scope" content="patelvirat884@gmail.com"> --}}
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register</title>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    {{! <link rel="icon" href="/img/weather.png"/>  This is used to set icon }}
-
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-
-    <main>
-      <form onsubmit="return validateLoginForm()" name="loginForm" method="post" action="/users/login" class="form contact-form" >
-        <h4 style="text-align:center;font-size:30px">User Login</a></h4>
-        <h5><a href="/admin/login">Admin / </a><a href="/login">User</a></h5>
-
-        <h5><a href="/login">Login / </a><a href="/register">Register</a></h5>
-
-        <div class="form-row">
-          <label for="email" class="form-label">EMAIL</label>
-          <input
-            type="email"
-            id="login-email"
-            name="email"
-            class="form-input password-input"
-          required/>
-        </div>
-
-        <div class="form-row">
-          <label for="password" class="form-label">PASSWORD</label>
-          <input
-            type="password"
-            id="login-password"
-            class="form-input password-input"
-            name="password"
-          required/>
-        </div>
-
-        <button type="submit" class="btn btn-block">submit</button>
-
-        <br>
-        <p style="margin-left:150px"> OR </p>
-                <div class="row">
-                    <div class="col-md-12">
-                    <a class="googleBtn btn-lg btn-google btn-block text-uppercase btn-outline" style="backgroundColor:white;text-align: center;" href="/auth/google"><img src="https://img.icons8.com/color/16/000000/google-logo.png"> Signup Using Google</a>
-                    </div> 
-                </div>
-
-
-      </form>
-
-    </main>
-  
-    <script>
-        function validateLoginForm() 
-          { 
-        let password = document.forms["loginForm"]["password"].value;
-        let email = document.forms["loginForm"]["email"].value;
-
-        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-          if(email.match(mailformat))
-            {           
-                 return true;
-            }
-            else
-            {
-            alert("You have entered an invalid email address!");
-            return false;
-            }
-      
-
-            }
-      </script>
-
-            
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
-      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="./browser-app.js"></script>
-  </body>
-</html> --}}

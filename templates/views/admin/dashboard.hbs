@@ -30,15 +30,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
     <link rel="stylesheet" href="../css/styles.css" />
-    <title>Admin | Billshaper</title>
+    <title>Admin</title>
   </head>
   <body>
 <section class="container ">
   <aside>
     <div class="sidebar-top">
-      <div class="logo">
-        <img src="../img/logo.png" alt="logo" />
-      </div>
+      
       <div class="close" id="close">
         <span class="material-icons-sharp">
           close
@@ -74,7 +72,7 @@
   </aside>
   <main class="mainContent">
 
-    <div class="col-three">
+    {{!-- <div class="col-three">
         <div class="card">
             <span class="material-icons-sharp">
                 receipt
@@ -92,11 +90,11 @@
                         receipt
                         </span>
                     <h3>Total <span class="text-primary">Users {{totalUsers}}</span></h3></div>
-    </div>
+    </div> --}}
 
     <div class="content">
         <div class="col-two">
-            <div><h3 class="title">All Bills</h3></div>
+            <div><h3 class="title">All Complaints</h3></div>
             <div class="searchform">
 
                 {{!-- <input type="search" name="search" id="search"> --}}
@@ -113,27 +111,27 @@
             <thead>
             <tr>
               {{!-- <th>No</th> --}}
-              <th>FirstName</th>
-              <th>LastName</th>
-              <th>Email</th>
-              <th>Company</th>
-              <th>Riles</th>
-              <th>Saved Ammount</th>
-              <th>Sto..h</th>
+              <th>ProductName</th>
+              <th>Warranty</th>
+              <th>Issue</th>
+              <th>Time Slot</th>
+              <th>Address</th>
+              {{!-- <th>Saved Ammount</th>
+              <th>Sto..h</th> --}}
             </tr>
             </thead>
             <tbody id="users">
                   {{#each records}}
                   <tr>
                     {{!-- <td style=" text-align: left;">{{ @index}}</td> --}}
-                    <td  style=" text-align: left;">{{this.firstname}}</td>
-                    <td  style=" text-align: left;">{{this.lastname}}</td>
-                    <td  id="fileUserEmail" style=" text-align: left;">{{this.useremail}}</td>
-                    <td  style=" text-align: left;">{{this.serviceprovider}}</td>
-                    <td  style=" text-align: left;"><a href="/{{this.filepath}}">{{this.filename}}</a></td> 
-                    <td  style=" text-align: left;"> {{this.filesavedamount}} ₹</td>
+                    <td  style=" text-align: left;">{{this.product}}</td>
+                    <td  style=" text-align: left;">{{this.warranty}}</td>
+                    <td  id="fileUserEmail" style=" text-align: left;">{{this.issue}}</td>
+                    <td  style=" text-align: left;">{{this.timeslot}}</td>
+                    <td  style=" text-align: left;">{{this.address}}</td> 
+                    {{!-- <td  style=" text-align: left;"> {{this.filesavedamount}} ₹</td> --}}
                     {{!-- <td style=" text-align: left;">{{this.fileStatus}}</td> --}}
-                    <td>
+                    {{!-- <td>
                       <select name="fileStatus" id="{{this._id}}">
                         <option value="{{this.filestatus}}">{{this.filestatus}}</option>
                         <option value="Processing">Processing</option>
@@ -143,7 +141,7 @@
 
                     </select>
 
-                    </td>
+                    </td> --}}
                   </tr>
                   {{/each}}
                 </tbody>

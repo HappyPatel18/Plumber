@@ -7,6 +7,8 @@ const path = require('path');
 const app = express();
 const connectDB = require('./db/connect')
 const tasks =require('./routes/tasks');
+const admin =require('./routes/admin');
+
 const hbs= require('hbs');
 const cors = require('cors');
 const oneDay = 1000 * 60 * 60 *24;
@@ -52,6 +54,7 @@ app.use(flash());
 app.use(express.json());
 app.use(express.urlencoded({extended: false}))
 app.use('/users',tasks);
+app.use('/admin',admin);
 
 
 app.get("/",(req, res) => {
