@@ -1,13 +1,13 @@
 require('dotenv').config();
 require('express-async-errors');
-const Register = require("./model/register")
+const Register = require("../model/register")
 // const passport = require('passport');
 const express = require('express');
 const path = require('path');
 const app = express();
-const connectDB = require('./db/connect')
-const tasks =require('./routes/tasks');
-const admin =require('./routes/admin');
+const connectDB = require('../db/connect')
+const tasks =require('../routes/tasks');
+const admin =require('../routes/admin');
 
 const hbs= require('hbs');
 const cors = require('cors');
@@ -17,8 +17,8 @@ const cookieParser = require("cookie-parser");
 
 
 const flash = require('connect-flash');
-const notFoundMiddleware = require('./middleware/not-found');
-const errorHandlerMiddleware = require('./middleware/error-handler');
+const notFoundMiddleware = require('../middleware/not-found');
+const errorHandlerMiddleware = require('../middleware/error-handler');
 const bodyParser = require('body-parser');
 
 const publicDirectoryPath = path.join(__dirname, "./public/");
