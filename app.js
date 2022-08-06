@@ -1,14 +1,14 @@
 require('dotenv').config();
 require('express-async-errors');
-const Register = require("../model/register")
+const Register = require("./model/register")
 // const passport = require('passport');
 const express = require('express');
 const path = require('path');
 const app = express();
-const connectDB = require('../db/connect')
-const tasks =require('../routes/tasks');
-const admin =require('../routes/admin');
-
+const connectDB = require('./db/connect')
+const tasks =require('./routes/tasks');
+const admin =require('./routes/admin');
+const port = process.env.PORT || 8080;
 const hbs= require('hbs');
 const cors = require('cors');
 const oneDay = 1000 * 60 * 60 *24;
@@ -17,8 +17,8 @@ const cookieParser = require("cookie-parser");
 
 
 const flash = require('connect-flash');
-const notFoundMiddleware = require('../middleware/not-found');
-const errorHandlerMiddleware = require('../middleware/error-handler');
+const notFoundMiddleware = require('./middleware/not-found');
+const errorHandlerMiddleware = require('./middleware/error-handler');
 const bodyParser = require('body-parser');
 
 const publicDirectoryPath = path.join(__dirname, "./public/");
@@ -87,8 +87,8 @@ app.use(errorHandlerMiddleware);
 
 const start = async () => {
   try {
-    await connectDB(process.env.MONGO_URI)
-    app.listen(process.env.PORT || 8080, function(){
+    await connectDB("mongodb+srv://happy:root123@nodeexpressprojects.mnvt8.mongodb.net/plumber?retryWrites=true&w=majority")
+    app.listen(port, function(){
       console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
     });
   } catch (error) {
